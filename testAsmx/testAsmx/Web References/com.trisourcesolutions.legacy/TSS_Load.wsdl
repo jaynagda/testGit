@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://webtest01/tss_load/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://webtest01/tss_load/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://webtest01/tss_load/">
+      <s:element name="Sandbox">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SandboxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SandboxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Board">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BoardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BoardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SandboxSoapIn">
+    <wsdl:part name="parameters" element="tns:Sandbox" />
+  </wsdl:message>
+  <wsdl:message name="SandboxSoapOut">
+    <wsdl:part name="parameters" element="tns:SandboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="BoardSoapIn">
+    <wsdl:part name="parameters" element="tns:Board" />
+  </wsdl:message>
+  <wsdl:message name="BoardSoapOut">
+    <wsdl:part name="parameters" element="tns:BoardResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TSS_LoadSoap">
+    <wsdl:operation name="Sandbox">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Merchant Boarding tester. Merchant information is parsed and acknowledged, but not added to the Merchant tables.</wsdl:documentation>
+      <wsdl:input message="tns:SandboxSoapIn" />
+      <wsdl:output message="tns:SandboxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Board">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Merchant Boarding. Merchant information is parsed and acknowledged and added to the Merchant tables.</wsdl:documentation>
+      <wsdl:input message="tns:BoardSoapIn" />
+      <wsdl:output message="tns:BoardSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TSS_LoadSoap" type="tns:TSS_LoadSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Sandbox">
+      <soap:operation soapAction="https://webtest01/tss_load/Sandbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Board">
+      <soap:operation soapAction="https://webtest01/tss_load/Board" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TSS_LoadSoap12" type="tns:TSS_LoadSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Sandbox">
+      <soap12:operation soapAction="https://webtest01/tss_load/Sandbox" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Board">
+      <soap12:operation soapAction="https://webtest01/tss_load/Board" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TSS_Load">
+    <wsdl:port name="TSS_LoadSoap" binding="tns:TSS_LoadSoap">
+      <soap:address location="https://legacy.trisourcesolutions.com/TSS_Load/TSS_Load.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TSS_LoadSoap12" binding="tns:TSS_LoadSoap12">
+      <soap12:address location="https://legacy.trisourcesolutions.com/TSS_Load/TSS_Load.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

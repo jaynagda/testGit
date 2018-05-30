@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://legacy.trisourcesolutions.com/TSS_Load/TSS_Load.asmx?wsdl" docRef="https://legacy.trisourcesolutions.com/TSS_Load/TSS_Load.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://legacy.trisourcesolutions.com/TSS_Load/TSS_Load.asmx" xmlns:q1="https://webtest01/tss_load/" binding="q1:TSS_LoadSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://legacy.trisourcesolutions.com/TSS_Load/TSS_Load.asmx" xmlns:q2="https://webtest01/tss_load/" binding="q2:TSS_LoadSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

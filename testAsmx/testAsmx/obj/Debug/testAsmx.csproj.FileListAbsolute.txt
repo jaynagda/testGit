@@ -1,0 +1,8 @@
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\bin\Debug\testAsmx.exe.config
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\obj\Debug\testAsmx.csprojResolveAssemblyReference.cache
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\bin\Debug\testAsmx.exe
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\bin\Debug\testAsmx.pdb
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\obj\Debug\testAsmx.exe
+C:\Users\jay nagda\Desktop\project\testAsmx\testAsmx\obj\Debug\testAsmx.pdb
